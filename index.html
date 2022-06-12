@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Rishabh Rathore">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/fa8f01e628.js" crossorigin="anonymous"></script>
+    <title>PetKart-Home-Page</title>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-bar w-full h-fit font-bold px-3 py-0-5 rounded-md flex-row flex-justify-between flex-align-center">
+        <div class="flex-row flex-justify-between flex-align-center flex-gap-1">
+            <div class="flex-row flex-justify-center flex-align-center flex-gap-2">
+                <!-- Brand Logo -->
+                <a href="./index.html">
+                    <img class="nav-logo rounded-circle" src="/assets/Petkart-Logo-GIF.gif" alt="Logo" width="60"
+                        height="60">
+                </a>
+                <!-- Brand Title -->
+                <h1 class="nav-logo-title h1 font-xbold">
+                    <a class="btn color-primary" href="./index.html">Petkart</a>
+                </h1>
+            </div>
+        </div>
+
+        <!-- search bar -->
+        <div class="flex-row flex-justify-between flex-align-center flex-gap-1">
+            <form
+                class="search-bar flex-row flex-justify-between flex-align-center flex-gap-1 px-1 py-0-5 rounded-md w-40">
+                <button class="btn btn-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input class="search-bar-input text-sm" type="search" placeholder="Type to search">
+            </form>
+        </div>
+
+        <!-- Icons and Buttons -->
+        <div class="nav-actions-container flex-row flex-justify-between flex-align-center flex-gap-2">
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span
+                    class="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">0
+                </span>
+            </a>
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-regular fa-heart fa-xl"></i>
+                <span
+                    class="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">0
+                </span>
+            </a>
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-solid fa-user fa-xl"></i>
+            </a>
+            <a href="#" class="btn btn-logout px-1 py-0-5 rounded-md">Login</a>
+        </div>
+    </nav>
+
+    <!-- Header Carousel -->
+    <header class="carousel-container w-full relative">
+        <div class="carousel-inner my-1">
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-full rounded-md" src="./assets/pet-carousel-1.png" alt="Pet Carousel Image">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-full rounded-md" src="./assets/pet-carousel-2.png" alt="Pet Carousel Image">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-full rounded-md" src="./assets/pet-carousel-7.png" alt="Pet Carousel Image">
+                </a>
+            </div>
+            <div class="carousel-item carousel-item-active">
+                <a href="#">
+                    <img class="w-full rounded-md" src="./assets/pet-carousel-4.png" alt="Pet Carousel Image">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="w-full rounded-md" src="./assets/pet-carousel-5.png" alt="Pet Carousel Image">
+                </a>
+            </div>
+        </div>
+        <div class="prev-btn absolute">
+            <button class="btn rounded-circle btn-secondary px-1-5 py-1 flex flex-justify-center flex-align-center">
+                <span><i class="fa-solid fa-angle-left fa-2xl"></i></span>
+            </button>
+        </div>
+        <div class="next-btn absolute">
+            <button class="btn rounded-circle btn-secondary px-1-5 py-1 flex flex-justify-center flex-align-center">
+                <span><i class="fa-solid fa-angle-right fa-2xl"></i></span>
+            </button>
+        </div>
+        <ol class="carousel-indicators absolute flex-row flex-justify-center flex-align-center gap-1 pointer">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </header>
+
+    <!-- Category Icons -->
+    <section class="category-section flex-col mx-2 my-7 p-1 gap-3 flex-wrap">
+        <h2>Shop By <span class="color-tertiary"> CATEGORY </span></h2>
+        <div class="flex-row flex-justify-evenly flex-align-center flex-wrap gap-1 my-1 mx-3 py-1 px-3">
+            <div class="category-icons">
+                <a class="btn" href="#">
+                    <img src="./assets/dog-1.jpg" alt="Dog-Shop-Image">
+                </a>
+                <a class="btn h5 color-tertiary" href="#">Dog</a>
+            </div>
+            <div class="category-icons">
+                <a class="btn" href="#">
+                    <img src="./assets/cat-1.jpg" alt="Cat-Shop-Image">
+                </a>
+                <a class="btn h5 color-tertiary" href="#">Cat</a>
+            </div>
+            <div class="category-icons">
+                <a class="btn" href="#">
+                    <img src="./assets/dog-groom-1.jpg" alt="Dog-Groom-Shop-Image">
+                </a>
+                <a class="btn h5 color-tertiary" href="#">Grooming</a>
+            </div>
+            <div class="category-icons">
+                <a class="btn" href="#">
+                    <img src="./assets/dog-toys-1.jpg" alt="Pet-Toys-Image">
+                </a>
+                <a class="btn h5 color-tertiary" href="#">Toys</a>
+            </div>
+            <div class="category-icons">
+                <a class="btn" href="#">
+                    <img src="./assets/dog-comfy-1.jpg" alt="Pet-Comfy-Needs">
+                </a>
+                <a class="btn h5 color-tertiary" href="#">Comfy</a>
+            </div>
+        </div>
+        <button class="btn btn-secondary w-20-pc m-1 px-3 py-1 rounded-full align-self-center"> VIEW ALL </button>
+    </section>
+    <!-- Background graphical paws (design elements) -->
+    <img class="paw-bg-spots paw-spot-2" src="./assets/Paw-GIF-Scale-transparent.gif" alt="Paw-Background">
+    <img class="paw-bg-spots paw-spot-3" src="./assets/Paw-GIF-Scale-transparent.gif" alt="Paw-Background">
+    <img class="paw-bg-spots paw-spot-1" src="./assets/Paw-Image-transparent.png" alt="Paw-Background">
+
+
+
+    <!-- Sale Wide Poster -->
+    <img class="w-full h-fit my-2" src="./assets/wide-poster-offers-sale.webp" alt="Offers-Sale-Poster" />
+
+    <!-- Section - Top Food Brands -->
+    <section class="section flex-col mx-2 my-7 p-1 gap-3 flex-wrap">
+        <div>
+            <h2> Top <span class="color-tertiary"> FOOD BRANDS </span> </h2>
+            <h6 class="color-faded"> Love a particular Food Brand? Find it here!</h6>
+        </div>
+        <div class="top-brands-container section-with-sliders w-80-pc flex-row flex-justify-center relative">
+            <div class="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/food-brand-1.webp" alt="Pet Carousel Image">
+                </a>
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/food-brand-2.webp" alt="Pet Carousel Image">
+                </a>
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/food-brand-3.webp" alt="Pet Carousel Image">
+                </a>
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/food-brand-4.webp" alt="Pet Carousel Image">
+                </a>
+            </div>
+            <div class="prev-btn absolute">
+                <button class="btn rounded-circle btn-secondary px-1-5 py-1 flex flex-justify-center flex-align-center">
+                    <span><i class="fa-solid fa-angle-left fa-2xl"></i></span>
+                </button>
+            </div>
+            <div class="next-btn absolute">
+                <button class="btn rounded-circle btn-secondary px-1-5 py-1 flex flex-justify-center flex-align-center">
+                    <span><i class="fa-solid fa-angle-right fa-2xl"></i></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EOS Sale Wide Poster -->
+    <img class="w-full h-fit my-2" src="./assets/wide-poster-eos-sale.webp" alt="EOS-Sale-Poster" />
+
+    <!-- Section - Top Offers of the Season -->
+    <section class="section flex-col mx-2 my-7 p-1 gap-3 flex-wrap">
+        <div>
+            <h2> Top <span class="color-tertiary"> OFFERS </span> of the <span class="color-tertiary"> SEASON </span>
+            </h2>
+            <h6 class="color-faded text-center"> Love a particular Food Brand? Find it here!</h6>
+        </div>
+        <div class="top-offers-container section-with-sliders w-80-pc flex-row flex-justify-center relative">
+            <div class="flex-row flex-align-center flex-justify-evenly gap-2 w-90-pc flex-wrap">
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/top-offers-1.webp" alt="Pet Carousel Image">
+                </a>
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/top-offers-2.webp" alt="Pet Carousel Image">
+                </a>
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/top-offers-3.webp" alt="Pet Carousel Image">
+                </a>
+                <a href="#">
+                    <img class="w-full rounded-lg" src="./assets/top-offers-4.webp" alt="Pet Carousel Image">
+                </a>
+            </div>
+            <div class="prev-btn absolute">
+                <button class="btn rounded-circle btn-secondary px-1-5 py-1 flex flex-justify-center flex-align-center">
+                    <span><i class="fa-solid fa-angle-left fa-2xl"></i></span>
+                </button>
+            </div>
+            <div class="next-btn absolute">
+                <button class="btn rounded-circle btn-secondary px-1-5 py-1 flex flex-justify-center flex-align-center">
+                    <span><i class="fa-solid fa-angle-right fa-2xl"></i></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section - Top Products Picks with Tabs -->
+    <section class="section flex-col mx-2 my-5 p-1 gap-3">
+        <div>
+            <h2>
+                <span class="color-tertiary"> PETKART'S </span>
+                Top
+                <span class="color-tertiary"> PICKS </span>
+            </h2>
+            <h6 class="color-faded text-center"> Loved by pets & pet parents!</h6>
+        </div>
+        <div class="flex-row flex-justify-center flex-align-center gap-5 flex-wrap w-80-pc">
+            <button class="btn btn-secondary m-1 p-1 rounded-full">New Arrivals</button>
+            <button class="btn btn-secondary m-1 p-1 rounded-full">Best Sellers</button>
+            <button class="btn btn-secondary m-1 p-1 rounded-full">Under ₹499</button>
+        </div>
+        <div class="flex-row flex-justify-center flex-align-center flex-wrap gap-2 w-80-pc">
+            <!-- Horizontal mini product card -->
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn">
+                <div
+                    class="mini-horizontal-product-card flex-row flex-justify-center flex-align-center gap-1 w-32 h-15">
+                    <img src="./assets/dog-1.jpg" alt="" class="w-12 h-12 rounded-md">
+                    <div class="m-0-25 w-20 h-12">
+                        <p class="mx-0-5 my-0-25 text-md">Product Name </p>
+                        <p class="color-faded mx-0-5 text-sm-2">Brand Name</p>
+                        <p class="color-tertiary mx-0-75 my-0-75 text-lg"> ₹499</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <button class="btn btn-secondary w-20-pc m-1 px-3 py-1 rounded-full align-self-center"> VIEW ALL </button>
+
+    </section>
+
+    <!-- Play Toys Wide Poster -->
+    <img class="w-full h-fit my-2" src="./assets/wide-poster-play-0.webp" alt="EOS-Sale-Poster" />
+
+    <!-- Section - Featured Brands, Shop By Brands -->
+    <section class="section flex-col mx-2 my-5 p-1 gap-3">
+        <div>
+            <h2>
+                Featured
+                <span class="color-tertiary"> Brands </span>
+            </h2>
+            <h6 class="color-faded text-center"> Shop By Brands</h6>
+            <h6 class="color-faded text-center"> Try them once, love them for life!</h6>
+        </div>
+        <div class="flex-row flex-justify-evenly flex-align-center flex-wrap gap-5 w-70-pc">
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-1-Isle-Of-Dogs.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-2-Happi-Doggy.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-3-farmina.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-4-Sheba.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-5-Royal-Canin.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-6-Pedigree.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-7-KONG.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-8-Savic.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-9-Trixie.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+            <a href="#" class="btn">
+                <img src="./assets/brand-image-10-HUFT.webp" alt="" class="w-15 h-15 rounded-md">
+            </a>
+        </div>
+        <button class="btn btn-secondary w-20-pc m-1 px-3 py-1 rounded-full align-self-center"> VIEW ALL </button>
+    </section>
+
+    <!-- Section - Facilities Offered -->
+    <div class="section-perks flex-row flex-justify-evenly flex-align-center gap-2 flex-wrap mx-8 my-5 p-3">
+        <div class="flex-row flex-justify-center flex-align-center gap-2 w-25">
+            <span class="color-tertiary icon text-xxl"><i class="fa-solid fa-truck-fast"></i></span>
+            <div>
+                <p class="text-lg">Fast Shipping</p>
+                <p class="text-sm-2 color-faded">On all Orders</p>
+            </div>
+        </div>
+        <div class="flex-row flex-justify-center flex-align-center gap-2 w-25">
+            <span class="color-tertiary icon text-xxl"><i class="fa-solid fa-rotate-left"></i></span>
+            <div>
+                <p class="text-lg">Free Returns</p>
+                <p class="text-sm-2 color-faded">Withing 7 days (T&C Apply)</p>
+            </div>
+        </div>
+        <div class="flex-row flex-justify-center flex-align-center gap-2 w-25">
+            <span class="color-tertiary icon text-xxl"><i class="fa-solid fa-handshake-angle"></i></span>
+            <div>
+                <p class="text-lg">Best Deals</p>
+                <p class="text-sm-2 color-faded">On all pet products</p>
+            </div>
+        </div>
+        <div class="flex-row flex-justify-center flex-align-center gap-2 w-25">
+            <span class="color-tertiary icon text-xxl"><i class="fa-solid fa-life-ring"></i></span>
+            <div>
+                <p class="text-lg">We Support</p>
+                <p class="text-sm-2 color-faded">7 days, 9AM to 9PM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section - Payment Modes -->
+    <div class="section-payment-modes flex-row flex-justify-evenly flex-align-center gap-3 flex-wrap mt-5 p-3">
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-cc-mastercard"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-cc-visa"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-google-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-apple-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-amazon-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-paypal"></i>
+        </span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex-col flex-justify-center flex-align-center w-full">
+        <div class="flex-row flex-justify-between flex-align-start gap-3 flex-wrap align-self-center py-6 px-2 w-80-pc">
+            <ul>
+                <p class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Quick Links</p>
+                <li><a href="#" class="btn btn-link-naked">About Us</a></li>
+                <li><a href="#" class="btn btn-link-naked">Contact Us</a></li>
+                <li><a href="#" class="btn btn-link-naked">Terms of Use</a></li>
+                <li><a href="#" class="btn btn-link-naked">Privacy Policy</a></li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Our Hub</li>
+                <li>
+                    <address>
+                        Petkart Paws Hub
+                        <br />
+                        Gopur Square,
+                        <br />
+                        Annapurna Road,
+                        <br />
+                        Indore, Madhya Pradesh,
+                        <br />
+                        India - 452009
+                    </address>
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Customer Support</li>
+                <li>
+                    <a class="btn btn-link-naked" href="#">
+                        <span class="mr-0-5"><i class="fa-solid fa-phone"></i></span>
+                        Support Helpline
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-link-naked" href="mailto:support@petkart.com">
+                        <span class="mr-0-5"><i class="fa-solid fa-envelope"></i></span>
+                        Email Us
+                    </a>
+                </li>
+                <li>
+                    Mon-Sat : 9AM to 9PM IST
+                    <br>
+                    Sun : 11AM to 5PM IST
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Social Media</li>
+                <div class="mx-0-5">
+                    <a class="mx-0-75" href="https://github.com/rishbitsnbytes">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-github btn btn-icon"></i>
+                        </span>
+                    </a>
+                    <a class="mx-0-75" href="https://twitter.com/rishbitsnbytes">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-twitter btn btn-icon"></i>
+                        </span>
+                    </a>
+                    <a class="mx-0-75" href="https://www.linkedin.com/in/rishrathore/">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-linkedin btn btn-icon"></i>
+                        </span>
+                    </a>
+                </div>
+
+            </ul>
+        </div>
+        <p class="footer-copyright-text p-2 w-80-pc align-self-center text-center">
+            <span><i class="fa-regular fa-copyright"></i>
+            </span>2022 - rishbitsnbytes
+        </p>
+    </footer>
+</body>
+
+</html>
