@@ -9,8 +9,22 @@
 .nav-bar {
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 5;
     background-color: rgba(162,213,171, 0.9);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: var(--br-md);
+    background-color: var(--color-primary-bg);
+}
+ 
+::-webkit-scrollbar-thumb {
+   border-radius: var(--br-md);
+   background-color: var(--color-secondary);
 }
 
 .btn {
@@ -136,14 +150,23 @@
  .align-self-center {
      align-self: center;
  }
+ .align-self-start {
+    align-self: flex-start;
+}
  
- /* Sync Delay, Can be deleted later */
+ /* Sync Delay, Can be deleted later after checking resync with main CL*/
  .color-faded {
      color: var(--gray-7);
  }
  .w-30 {
      width: 30rem;
  }
+ .h-30 {
+     height: 30rem;
+ }
+ .color-quarternary {
+    color: var(--color-quarternary);
+}
 
  .section-perks {
      border-top: 1px solid var(--gray-5);
@@ -175,3 +198,4 @@
  footer a:hover {
      color: var(--color-tertiary);
  }
+
