@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Rishabh Rathore">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/products.css">
+    <script src="https://kit.fontawesome.com/fa8f01e628.js" crossorigin="anonymous"></script>
+    <title>PetKart-Product-Listing-Page</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar w-full h-fit font-bold px-3 py-0-5 rounded-md flex-row flex-justify-between flex-align-center">
+        <div class="flex-row flex-justify-between flex-align-center flex-gap-1">
+            <div class="flex-row flex-justify-center flex-align-center flex-gap-2">
+                <!-- Brand Logo -->
+                <a href="./index.html">
+                    <img class="nav-logo rounded-circle" src="/assets/Petkart-Logo-GIF.gif" alt="Logo" width="60"
+                        height="60">
+                </a>
+                <!-- Brand Title -->
+                <h1 class="nav-logo-title h1 font-xbold">
+                    <a class="btn color-primary" href="./index.html">Petkart</a>
+                </h1>
+            </div>
+        </div>
+
+        <!-- search bar -->
+        <div class="flex-row flex-justify-between flex-align-center flex-gap-1">
+            <form
+                class="search-bar flex-row flex-justify-between flex-align-center flex-gap-1 px-1 py-0-5 rounded-md w-40">
+                <button class="btn btn-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input class="search-bar-input text-sm" type="search" placeholder="Type to search">
+            </form>
+        </div>
+
+        <!-- Icons and Buttons -->
+        <div class="nav-actions-container flex-row flex-justify-between flex-align-center flex-gap-2">
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span
+                    class="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">0
+                </span>
+            </a>
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-regular fa-heart fa-xl"></i>
+                <span
+                    class="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">0
+                </span>
+            </a>
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-solid fa-user fa-xl"></i>
+            </a>
+            <a href="#" class="btn btn-logout px-1 py-0-5 rounded-md">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main Product Listing Section -->
+    <main class="section-main grid m-2 px-3 py-3 gap-5">
+        <!-- Filter Sidebar Section -->
+        <aside class="aside-filter w-28 py-1 px-1-5 rounded-md h-80-pc">
+            <div class="filter-wrapper">
+                <!-- Filter Sidebar Section Header -->
+                <div class="filter-wrapper-head flex-row flex-justify-between flex-align-center">
+                    <h3 class="text-xl font-xbold">Filters</h3>
+                    <button class="btn btn-link text-sm-2">
+                        <span><i class="fa-solid fa-broom"></i></span>
+                        Clear All
+                    </button>
+                </div>
+                <div class="filter-main-section">
+                    <!-- Price Filter -->
+                    <div class="filter-price my-5">
+                        <p class="filter-head text-lg font-bold mb-0-75">Price - {value}</p>
+                        <div class="filter-input-subsection px-0-75">
+                            <div class="flex-row flex-justify-between flex-align-center">
+                                <p class="font-thin text-sm-2">
+                                    <span><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                                    100
+                                </p>
+                                <p class="font-thin text-sm-2">
+                                    <span><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                                    5000
+                                </p>
+                            </div>
+                            <input type="range" id="price-range" name="price-range" value="1000" min="100" max="5000">
+                        </div>
+                    </div>
+                    <!-- Pet Category Filter -->
+                    <div class="filter-pet-category my-5">
+                        <p class="filter-head text-lg font-bold mb-0-75">Shop By</p>
+                        <div class="filter-input-subsection px-1">
+                            <ul class="flex-row flex-justify-start flex-align-center gap-2">
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="dog-category" name="dog-category">
+                                    <label class="mx-0-5" for="dog-category">Dog</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="cat-category" name="cat-category">
+                                    <label class="mx-0-5" for="cat-category">Cat</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Product Category Filter -->
+                    <div class="filter-product-type my-5">
+                        <p class="filter-head text-lg font-bold mb-0-75">Product Type</p>
+                        <div class="filter-input-subsection px-1">
+                            <ul>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="food-prod-category" name="food-prod-category">
+                                    <label class="mx-0-5" for="food-prod-category">Food</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="toy-prod-category" name="toy-prod-category">
+                                    <label class="mx-0-5" for="toy-prod-category">Toy</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="grooming-prod-category" name="grooming-prod-category">
+                                    <label class="mx-0-5" for="grooming-prod-category">Grooming</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="comfort-prod-category" name="comfort-prod-category">
+                                    <label class="mx-0-5" for="comfort-prod-category">Comfort</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="accessories-prod-category"
+                                        name="accessories-prod-category">
+                                    <label class="mx-0-5" for="accessories-prod-category">Accessories</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Rating Filter -->
+                    <div class="filter-rating my-5">
+                        <p class="filter-head text-lg font-bold mb-0-75">Ratings</p>
+                        <div class="filter-input-subsection px-1">
+                            <ul>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="radio" name="rating-radio" id="4-stars" value="4-stars">
+                                    <label for="4-stars"> 4 <span><i class="fa-solid fa-star"></i></span> &
+                                        above</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="radio" name="rating-radio" id="3-stars" value="3-stars">
+                                    <label for="3-stars"> 3 <span><i class="fa-solid fa-star"></i></span> &
+                                        above</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="radio" name="rating-radio" id="2-stars" value="2-stars">
+                                    <label for="2-stars"> 2 <span><i class="fa-solid fa-star"></i></span> &
+                                        above</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="radio" name="rating-radio" id="1-stars" value="1-stars">
+                                    <label for="1-stars"> 1 <span><i class="fa-solid fa-star"></i></span> &
+                                        above</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Food Category Filter -->
+                    <div class="filter-pet-food-category my-5">
+                        <p class="filter-head text-lg font-bold mb-0-75">Food Category</p>
+                        <div class="filter-input-subsection px-1">
+                            <ul class="flex-row flex-justify-start flex-align-center gap-2">
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="veg-food" name="veg-food">
+                                    <label class="mx-0-5" for="veg-food">Veg</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="non-veg-food" name="non-veg-food">
+                                    <label class="mx-0-5" for="non-veg-food">Non-Veg</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Brand Filter -->
+                    <div class="filter-brand my-5">
+                        <p class="filter-head text-lg font-bold mb-0-75">Brand</p>
+                        <div class="filter-input-subsection px-1">
+                            <ul>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-1" name="brand-category-1">
+                                    <label class="mx-0-5" for="brand-category-1">Isle of Dogs</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-2" name="brand-category-2">
+                                    <label class="mx-0-5" for="brand-category-2">Padigree</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-3" name="brand-category-3">
+                                    <label class="mx-0-5" for="brand-category-3">Farmina</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-4" name="brand-category-4">
+                                    <label class="mx-0-5" for="brand-category-4">Sheba</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-5" name="brand-category-5">
+                                    <label class="mx-0-5" for="brand-category-5">Royal Canin</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-6" name="brand-category-6">
+                                    <label class="mx-0-5" for="brand-category-6">Happi Dogs</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-7" name="brand-category-7">
+                                    <label class="mx-0-5" for="brand-category-7">Kong</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-8" name="brand-category-8">
+                                    <label class="mx-0-5" for="brand-category-8">Savic</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-9" name="brand-category-9">
+                                    <label class="mx-0-5" for="brand-category-9">Trixie</label>
+                                </li>
+                                <li class="flex-row flex-justify-start flex-align-center gap-0-5">
+                                    <input type="checkbox" id="brand-category-10" name="brand-category-10">
+                                    <label class="mx-0-5" for="brand-category-10">Heads Up For Tails</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Product Display Section -->
+        <section class="flex-col flex-justify-start flex-align-start">
+            <!-- Product List Head Section - Number of Products, Sort Filters -->
+            <section class="w-full">
+                <h2 class="main-section-head w-full mb-1 pb-1 font-xbold">PRODUCTS</h2>
+                <div>
+                    <p>Showing Products { 20 }</p>
+                </div>
+                <div class="filter-sort-wrapper flex-row flex-justify-start flex-align-center gap-2 w-full mt-0-5">
+                    <p class="h4 font-bold mr-1">Sort By - </p>
+                    <button class="btn btn-link-naked btn-sort-active">Price -- High to Low</button>
+                    <button class="btn btn-link-naked">Price -- Low to High</button>
+                </div>
+            </section>
+            <!-- Product Cards Grid Section -->
+            <section class="product-list-wrapper grid grid-col-autofit-w-25 w-full gap-5 pt-1">
+                <!-- Product Card Simple -->
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Product Card with Badge -->
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                </div>
+                <!-- Product Card with all features, viz., Badge, Text-Overlay - Sold Out  -->
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                    <div
+                        class="card-text-overlay-container absolute flex-row flex-justify-center flex-align-center w-full h-full rounded-inherit">
+                        <p class="h1">Sold Out</p>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div
+                        class="card-text-overlay-container absolute flex-row flex-justify-center flex-align-center w-full h-full rounded-inherit">
+                        <p class="h1">Sold Out</p>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                    <div
+                        class="card-text-overlay-container absolute flex-row flex-justify-center flex-align-center w-full h-full rounded-inherit">
+                        <p class="h1">Sold Out</p>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div
+                        class="card-text-overlay-container absolute flex-row flex-justify-center flex-align-center w-full h-full rounded-inherit">
+                        <p class="h1">Sold Out</p>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <span
+                        class="card-badge text-badge-highlight m-0-25 px-0-75 py-0-25 rounded-md text-sm-2 w-fit absolute">New</span>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="card-container w-25 h-fit rounded-md relative flex-col flex-justify-start flex-align-center">
+                    <img src="/assets/cat-1.jpg" alt="" class="w-full h-25 rounded-md">
+                    <div
+                        class="card-product-details flex-col flex-justify-start flex-align-start gap-0-5 w-full px-1 m-1">
+                        <div class="card-product-heads mb-0-5">
+                            <p class="text-md font-bold">Product Name Product Name Product Name Product Name Product
+                                Name
+                            </p>
+                            <p class="h6 color-faded">Brand Name</p>
+                        </div>
+                        <div class="card-ratings">
+                            <p class="rating text-sm-2 inline mr-1 px-0-75 py-0-5 rounded-md">4.5 <i
+                                    class="fa-solid fa-star text-sm-2"></i></p>
+                            <p class="text-sm-2 inline"> (100 ratings)</p>
+                        </div>
+                        <div class="card-price-container my-0-25">
+                            <div>
+                                <p class="h2 color-primary font-bold inline mr-1">₹499</p>
+                                <p class="text-md color-faded inline"><s>₹999</s></p>
+                            </div>
+                            <div>
+                                <p class="text-sm-2 inline color-tertiary mr-1">50% off</p>
+                                <p class="text-sm-2 inline color-tertiary">You save : ₹500 </p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-90-pc py-0-5 rounded-md align-self-center">
+                            <span class="mx-0-5"><i class="fa-solid fa-cart-plus"></i></span>
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="btn-wishlist absolute w-1 h-1 p-1-5 rounded-circle
+                    flex-row flex-justify-center flex-align-center">
+                        <button>
+                            <span>
+                                <i class="fa-regular fa-heart fa-lg"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Section - Payment Modes -->
+    <div class="section-payment-modes flex-row flex-justify-evenly flex-align-center gap-3 flex-wrap mt-5 p-3">
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-cc-mastercard"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-cc-visa"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-google-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-apple-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-amazon-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-paypal"></i>
+        </span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex-col flex-justify-center flex-align-center w-full">
+        <div class="flex-row flex-justify-between flex-align-start gap-3 flex-wrap align-self-center py-6 px-2 w-80-pc">
+            <ul>
+                <p class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Quick Links</p>
+                <li><a href="#" class="btn btn-link-naked">About Us</a></li>
+                <li><a href="#" class="btn btn-link-naked">Contact Us</a></li>
+                <li><a href="#" class="btn btn-link-naked">Terms of Use</a></li>
+                <li><a href="#" class="btn btn-link-naked">Privacy Policy</a></li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Our Hub</li>
+                <li>
+                    <address>
+                        Petkart Paws Hub
+                        <br />
+                        Gopur Square,
+                        <br />
+                        Annapurna Road,
+                        <br />
+                        Indore, Madhya Pradesh,
+                        <br />
+                        India - 452009
+                    </address>
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Customer Support</li>
+                <li>
+                    <a class="btn btn-link-naked" href="#">
+                        <span class="mr-0-5"><i class="fa-solid fa-phone"></i></span>
+                        Support Helpline
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-link-naked" href="mailto:support@petkart.com">
+                        <span class="mr-0-5"><i class="fa-solid fa-envelope"></i></span>
+                        Email Us
+                    </a>
+                </li>
+                <li>
+                    Mon-Sat : 9AM to 9PM IST
+                    <br>
+                    Sun : 11AM to 5PM IST
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Social Media</li>
+                <div class="mx-0-5">
+                    <a class="mx-0-75" href="https://github.com/rishbitsnbytes">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-github btn btn-icon"></i>
+                        </span>
+                    </a>
+                    <a class="mx-0-75" href="https://twitter.com/rishbitsnbytes">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-twitter btn btn-icon"></i>
+                        </span>
+                    </a>
+                    <a class="mx-0-75" href="https://www.linkedin.com/in/rishrathore/">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-linkedin btn btn-icon"></i>
+                        </span>
+                    </a>
+                </div>
+
+            </ul>
+        </div>
+        <p class="footer-copyright-text p-2 w-80-pc align-self-center text-center">
+            <span><i class="fa-regular fa-copyright"></i>
+            </span>2022 - rishbitsnbytes
+        </p>
+    </footer>
+
+</body>
+
+</html>
