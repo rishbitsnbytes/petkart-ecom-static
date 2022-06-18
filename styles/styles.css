@@ -1,6 +1,10 @@
 
 @import url(https://temp-cl-ufa.vercel.app/styles/cosmos-ui.css);
 @import url(./variables-fonts.css);
+@import url(./products.css);
+@import url(./single-product.css);
+@import url(./wishlist.css);
+
 
 /* CSS Import */
 /* @import url(https://cosmos-ui-cl-ufa.vercel.app/styles/cosmos-ui.css); */
