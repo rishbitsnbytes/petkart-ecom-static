@@ -1,0 +1,32 @@
+.cart-page-main {
+    min-height: 100vh;
+}
+
+.cart-product-card {
+    border: 1px solid var(--gray-7);
+}
+
+.cart-product-card img {
+    object-fit: cover;
+}
+
+.cart-product-card .input-qty-display {
+    border: 1px solid var(--color-primary);
+    overflow-x: visible;
+}
+
+.cart-price-details-card {
+    border: 1px solid var(--gray-7);
+    position: sticky;
+    top: 15rem;
+}
+
+.cart-price-details-card .price-calculations {
+    border-top: 2px solid var(--gray-9);
+    padding: 2rem 0;
+}
+
+.cart-price-details-card .total-amount {
+    border-top: 2px solid var(--gray-9);
+    border-bottom: 2px solid var(--gray-9);
+}
