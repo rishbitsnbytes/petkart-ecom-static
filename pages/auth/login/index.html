@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Rishabh Rathore">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles/styles.css">
+    <link rel="stylesheet" href="../../../styles/auth.css">
+    <script src="https://kit.fontawesome.com/fa8f01e628.js" crossorigin="anonymous"></script>
+    <title>PetKart-Login-Page</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar w-full h-fit font-bold px-3 py-0-5 rounded-md flex-row flex-justify-between flex-align-center">
+        <div class="flex-row flex-justify-between flex-align-center flex-gap-1">
+            <div class="flex-row flex-justify-center flex-align-center flex-gap-2">
+                <!-- Brand Logo -->
+                <a href="./index.html">
+                    <img class="nav-logo rounded-circle" src="/assets/Petkart-Logo-GIF.gif" alt="Logo" width="60"
+                        height="60">
+                </a>
+                <!-- Brand Title -->
+                <h1 class="nav-logo-title h1 font-xbold">
+                    <a class="btn color-primary" href="./index.html">Petkart</a>
+                </h1>
+            </div>
+        </div>
+
+        <!-- search bar -->
+        <div class="flex-row flex-justify-between flex-align-center flex-gap-1">
+            <form
+                class="search-bar flex-row flex-justify-between flex-align-center flex-gap-1 px-1 py-0-5 rounded-md w-40">
+                <button class="btn btn-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input class="search-bar-input text-sm" type="search" placeholder="Type to search">
+            </form>
+        </div>
+
+        <!-- Icons and Buttons -->
+        <div class="nav-actions-container flex-row flex-justify-between flex-align-center flex-gap-2">
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span
+                    class="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">0
+                </span>
+            </a>
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-regular fa-heart fa-xl"></i>
+                <span
+                    class="badge-notification-count absolute w-2 h-2 p-0-5 rounded-full font-bold flex-row flex-justify-center flex-align-center text-sm">0
+                </span>
+            </a>
+            <a href="#" class="btn relative mx-0-5 my-1 w-max h-max">
+                <i class="fa-solid fa-user fa-xl"></i>
+            </a>
+            <a href="#" class="btn btn-logout px-1 py-0-5 rounded-md">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main Login Form Section -->
+    <main class="auth-main flex-col flex-justify-center flex-align-center">
+        <section class="auth-main-content-wrapper w-40-pc rounded-md my-5">
+            <div class="login-signup-btns-wrapper flex-row flex-justify-center flex-align-center w-full">
+                <a href="#" class="btn-login active btn w-full text-center p-1 rounded-md h2">LOGIN</a>
+                <a href="#" class="btn-signup btn w-full text-center p-1 rounded-md h2">SIGN UP</a>
+            </div>
+            <form class="auth-form flex-col flex-justify-center flex-align-center my-1 py-2 mx-2 px-5 w-90-pc">
+                <div class="flex-col flex-justify-center flex-align-start gap-0-5 h4 font-bold w-90-pc my-1-5">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="kindness@humanity.org">
+                </div>
+                <div class="flex-col flex-justify-center flex-align-start gap-0-5 h4 font-bold w-90-pc my-1-5">
+                    <label for="password">Password</label>
+                    <div class="relative w-full h4 font-bold">
+                        <input type="password" class="w-full" id="password" name="password" placeholder="**********">
+                        <button class="btn btn-icon password-eye absolute ">
+                            <span class="text-lg">
+                                <i class="fa-regular fa-eye"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex-row flex-justify-between flex-align-start w-90-pc my-2 py-1">
+                    <div class="flex-row flex-justify-center flex-align-center w-fit gap-0-5 font-bold">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#" class="btn btn-link-naked color-tertiary font-bold">Forgot Password?</a>
+                </div>
+                <div class="flex-col flex-justify-center flex-align-center w-90-pc gap-2">
+                    <button class="btn btn-primary rounded-md py-1 w-full font-bold">
+                        Login
+                    </button>
+                    <button class="btn btn-secondary rounded-md py-1 w-full font-bold">
+                        Login with Test Credentials
+                    </button>
+                    <a href="#" class="btn btn-link-animated-3 h5 font-sbold font-bold">New to Petkart ?  Create Account 
+                        <span class="mx-0-5 text-md text-center">
+                            <i class="fa-solid fa-circle-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </form>
+
+
+        </section>
+    </main>
+
+    <!-- Section - Payment Modes -->
+    <div class="section-payment-modes flex-row flex-justify-evenly flex-align-center gap-3 flex-wrap mt-5 p-3">
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-cc-mastercard"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-cc-visa"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-google-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-apple-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-amazon-pay"></i>
+        </span>
+        <span class="color-primary text-xxxl font-bold">
+            <i class="fa-brands fa-paypal"></i>
+        </span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex-col flex-justify-center flex-align-center w-full">
+        <div class="flex-row flex-justify-between flex-align-start gap-3 flex-wrap align-self-center py-6 px-2 w-80-pc">
+            <ul>
+                <p class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Quick Links</p>
+                <li><a href="#" class="btn btn-link-naked">About Us</a></li>
+                <li><a href="#" class="btn btn-link-naked">Contact Us</a></li>
+                <li><a href="#" class="btn btn-link-naked">Terms of Use</a></li>
+                <li><a href="#" class="btn btn-link-naked">Privacy Policy</a></li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Our Hub</li>
+                <li>
+                    <address>
+                        Petkart Paws Hub
+                        <br />
+                        Gopur Square,
+                        <br />
+                        Annapurna Road,
+                        <br />
+                        Indore, Madhya Pradesh,
+                        <br />
+                        India - 452009
+                    </address>
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Customer Support</li>
+                <li>
+                    <a class="btn btn-link-naked" href="#">
+                        <span class="mr-0-5"><i class="fa-solid fa-phone"></i></span>
+                        Support Helpline
+                    </a>
+                </li>
+                <li>
+                    <a class="btn btn-link-naked" href="mailto:support@petkart.com">
+                        <span class="mr-0-5"><i class="fa-solid fa-envelope"></i></span>
+                        Email Us
+                    </a>
+                </li>
+                <li>
+                    Mon-Sat : 9AM to 9PM IST
+                    <br>
+                    Sun : 11AM to 5PM IST
+                </li>
+            </ul>
+            <ul>
+                <li class="footer-list-head text-lg font-bold mb-1 py-0-25 px-2 rounded-sm w-fit">Social Media</li>
+                <div class="mx-0-5">
+                    <a class="mx-0-75" href="https://github.com/rishbitsnbytes">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-github btn btn-icon"></i>
+                        </span>
+                    </a>
+                    <a class="mx-0-75" href="https://twitter.com/rishbitsnbytes">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-twitter btn btn-icon"></i>
+                        </span>
+                    </a>
+                    <a class="mx-0-75" href="https://www.linkedin.com/in/rishrathore/">
+                        <span class="text-xxl font-bold"><i class="fa-brands fa-linkedin btn btn-icon"></i>
+                        </span>
+                    </a>
+                </div>
+
+            </ul>
+        </div>
+        <p class="footer-copyright-text p-2 w-80-pc align-self-center text-center">
+            <span><i class="fa-regular fa-copyright"></i>
+            </span>2022 - rishbitsnbytes
+        </p>
+    </footer>
+</body>
+</html>
